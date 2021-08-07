@@ -10,13 +10,17 @@
         "icons",
         "iconpark"
     ],
-    "main": "dist/",
+    "main": "src/",
     "files": [
         "dist",
         "src",
         "docs"
     ],
-    "scripts": {},
+    "scripts": {
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs",
+        "icons:build": "gulp build"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/codesinging/pin-icons"
@@ -29,7 +33,11 @@
     "dependencies": {},
     "devDependencies": {
         "@icon-park/svg": "^1.3.5",
+        "autoprefixer": "^9",
         "del": "^6.0.0",
-        "gulp": "^4.0.2"
+        "gulp": "^4.0.2",
+        "postcss": "^7",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+        "vuepress": "^1.8.2"
     }
 }

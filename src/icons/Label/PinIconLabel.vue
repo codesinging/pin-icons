@@ -1,5 +1,5 @@
 <template>
-    <svg :width="size" :height="size" viewBox="0 0 48 48" fill="none" class="pin-icon" xmlns="http://www.w3.org/2000/svg"><path d="M9 4H39V44L24 33.4286L9 44V4Z" :stroke="color" :stroke-width="strokeWidth" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="4" width="30" height="12" fill="none" :stroke="color" :stroke-width="strokeWidth" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg :width="size" :height="size" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 4H39V44L24 33.4286L9 44V4Z" :stroke="color" :stroke-width="strokeWidth" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="4" width="30" height="12" fill="none" :stroke="color" :stroke-width="strokeWidth" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
     props: {
         size: {
             type: [Number, String],
-            default: '1rem'
+            default: 16
         },
         color: {
             type: String,

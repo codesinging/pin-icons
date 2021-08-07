@@ -47,7 +47,6 @@ class Builder {
 
         let vueTemplate = svgContent
             .replace('<?xml version="1.0" encoding="UTF-8"?>', '')
-            .replace('xmlns=', 'class="pin-icon" xmlns=')
             .replace('width="1em"', ':width="size"')
             .replace('height="1em"', ':height="size"')
             .replace(/stroke="currentColor"/g, ':stroke="color"')
@@ -117,12 +116,14 @@ class Builder {
     }
 
     createMain() {
-        let imports = this.successfulComponents.map(item => `import _${item.saveName} from "./icons/${item.saveName}"`).join("\n")
-        let exports = this.successfulComponents.map(item => `export const ${item.saveName} = _${item.saveName}`).join("\n")
+        let imports = this.successfulComponents.map(item => `import _${item.componentName} from "./icons/${item.saveName}"`).join("\n")
+        let exports = this.successfulComponents.map(item => `export const ${item.componentName} = _${item.componentName}`).join("\n")
+        let icons = this.successfulComponents.map(item=>item.componentName).join(",\n    ")
 
         let content = this.stubContent('main.js')
             .replace('__IMPORTS__', imports)
             .replace('__EXPORTS__', exports)
+            .replace('__ICONS__', icons)
 
         let filename = path.join(this.srcDir, 'index.js')
 
